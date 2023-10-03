@@ -1,0 +1,95 @@
+swagger: "2.0"
+info:
+  title: "API de Clientes"
+  description: "API para gestionar clientes"
+  version: "1.0.0"
+basePath: "/api/clientes"
+schemes:
+  - "http"
+paths:
+  /:
+    get:
+      summary: "Obtener todos los clientes"
+      description: "Devuelve una lista de todos los clientes."
+      responses:
+        200:
+          description: "Lista de clientes obtenida exitosamente"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Cliente"
+    post:
+      summary: "Crear un nuevo cliente"
+      description: "Crea un nuevo cliente."
+      parameters:
+        - name: "Cliente"
+          in: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/ClienteInput"
+      responses:
+        201:
+          description: "Cliente creado exitosamente"
+          schema:
+            $ref: "#/definitions/Cliente"
+  /{id}:
+    parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+    get:
+      summary: "Obtener un cliente por ID"
+      description: "Devuelve un cliente por su ID."
+      responses:
+        200:
+          description: "Cliente obtenido exitosamente"
+          schema:
+            $ref: "#/definitions/Cliente"
+        404:
+          description: "Cliente no encontrado"
+    delete:
+      summary: "Eliminar un cliente por ID"
+      description: "Elimina un cliente por su ID."
+      responses:
+        204:
+          description: "Cliente eliminado exitosamente"
+        404:
+          description: "Cliente no encontrado"
+definitions:
+  Cliente:
+    type: "object"
+    properties:
+      _id:
+        type: "string"
+      nombre:
+        type: "string"
+      apellido:
+        type: "string"
+      fechaNacimiento:
+        type: "string"
+      direccion:
+        type: "string"
+      celular:
+        type: "number"
+      correoElectronico:
+        type: "string"
+      empresa:
+        type: "string"
+  ClienteInput:
+    type: "object"
+    properties:
+      nombre:
+        type: "string"
+      apellido:
+        type: "string"
+      fechaNacimiento:
+        type: "string"
+      direccion:
+        type: "string"
+      celular:
+        type: "number"
+      correoElectronico:
+        type: "string"
+      empresa:
+        type: "string"
