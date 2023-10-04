@@ -17,7 +17,7 @@ class Server{
         this.app = express();
         
         this.port = process.env.PORT;
-        this.clientesPath = ""
+        this.clientesPath = "/api/Clientes"
         this.empleadosPath = "/api/Empleados"
         this.proyectosPath = "/api/Proyectos"
         this.usuariosPath = "/api/Usuarios"
