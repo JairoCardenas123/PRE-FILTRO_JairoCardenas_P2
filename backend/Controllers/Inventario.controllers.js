@@ -14,6 +14,17 @@ const postInventario =  async (req,res) =>{
     }
 }
 
+const putInventario = async (req, res)=>{
+    const { id } = req.params;
+    const { _id, ...resto } = req.body;
+
+    const inventario = await Inventario.findByIdAndUpdate( id, resto, {new:true});
+    res.json({
+        msg:"Usuario Actualizado",
+        inventario : inventario
+    });
+}
+
 const deleteInventario = async (req,res)=>{
     const {id} = req.params
     try {
@@ -37,4 +48,4 @@ const obtenerInventario = async(req,res) =>{
     }
 }
 
-module.exports = {obtenerInventario, deleteInventario, postInventario}
+module.exports = {obtenerInventario, deleteInventario, postInventario,putInventario}

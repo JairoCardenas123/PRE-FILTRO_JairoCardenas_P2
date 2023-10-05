@@ -18,14 +18,11 @@ const postEmpleado = async (req,res) =>{
 const putEmpleados = async (req, res)=>{
       const { id } = req.params;
 
-      const { _id, password, googleSignIn, ...resto } = req.body;
-  
-
-      const usuario = await Empleado.findByIdAndUpdate( id, resto, {new:true});
-  
+      const { _id, ...resto } = req.body;
+      const empleados = await Empleado.findByIdAndUpdate( id, resto, {new:true});
       res.json({
           msg:"Usuario Actualizado",
-          usuario : usuario
+          empleados : empleados
       });
   }
 

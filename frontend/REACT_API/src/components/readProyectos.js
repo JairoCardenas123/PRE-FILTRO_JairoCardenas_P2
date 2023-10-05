@@ -42,7 +42,7 @@ export default function ReadProyectos() {
         <li><Link to="/readClientes">Ir a la tabla Clientes</Link></li>
         <li><Link to="/readInventario">Ir a la tabla Inventario</Link></li>
         <li><Link to="/read">Ir a la tabla Empleados</Link></li>
-          <li><Link to="/readProyectos">Ir a la tabla Proycetos</Link></li>
+          <li><Link to="/readProyectos">Ir a la tabla Proyectos</Link></li>
         </ul>
       </nav>
       <Table singleLine>

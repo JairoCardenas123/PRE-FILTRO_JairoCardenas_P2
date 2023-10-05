@@ -6,14 +6,28 @@ const bcryptjs = require ('bcryptjs');
 const postClientes = async (req, res)=>{
 
     const {nombre, apellido, fechaNacimiento,direccion,celular,correoElectronico,empresa} = req.body;
-    const usuario = new Cliente({nombre, apellido, fechaNacimiento, direccion,celular,correoElectronico,empresa});
+    const clientes = new Cliente({nombre, apellido, fechaNacimiento, direccion,celular,correoElectronico,empresa});
     // Guardar en MONGODB
-    await usuario.save();
+    await clientes.save();
     res.json({
         "message":"post api",
-        usuario
+        clientes
     })
 }
+
+const putClientes = async (req, res)=>{
+    const { id } = req.params;
+
+    const { _id, ...resto } = req.body;
+    const clientes = await Cliente.findByIdAndUpdate( id, resto, {new:true});
+
+    res.json({
+        msg:"Usuario Actualizado",
+        clientes : clientes
+    });
+}
+
+
 
 const deleteClientes = async(req,res)=>{
     const {id} = req.params;
@@ -38,4 +52,4 @@ const obtenerTodos = async (req,res)=>{
         console.log("error");
     }
 }
-module.exports = {obtenerTodos,postClientes,deleteClientes}
+module.exports = {obtenerTodos,postClientes,deleteClientes,putClientes}

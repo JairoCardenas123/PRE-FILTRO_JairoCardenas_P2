@@ -13,7 +13,7 @@ const postProyectos = async (req, res)=>{
 
 const putUsuarios = async (req, res)=>{
     const { id } = req.params;
-    const { _id, nombre, fechaFinalizacion, ...resto } = req.body;
+    const { _id,...resto } = req.body;
     const usuario = await Proyecto.findByIdAndUpdate( id, resto, {new:true});
     res.json({
         msg:"Usuario Actualizado",

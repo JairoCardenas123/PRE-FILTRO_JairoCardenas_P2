@@ -14,6 +14,18 @@ const postEmpresas = async (req,res)=>{
     }
 }
 
+
+const putEmpresas = async (req, res)=>{
+    const { id } = req.params;
+    const { _id, ...resto } = req.body;
+
+    const empresas = await Empresas.findByIdAndUpdate( id, resto, {new:true});
+    res.json({
+        msg:"Usuario Actualizado",
+        empresas : empresas
+    });
+}
+
 const deleteEmpresa = async (req,res)=>{
     const {id} = req.params
     try {
@@ -38,4 +50,4 @@ const obtenerEmpresas = async(req,res) =>{
     }
 }
 
-module.exports = {obtenerEmpresas,deleteEmpresa,postEmpresas}
+module.exports = {obtenerEmpresas,deleteEmpresa,postEmpresas,putEmpresas}
