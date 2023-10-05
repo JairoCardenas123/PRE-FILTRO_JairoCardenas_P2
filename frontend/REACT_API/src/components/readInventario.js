@@ -1,4 +1,5 @@
 import axios from 'axios';
+import '../css/nav.css'
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
@@ -21,7 +22,6 @@ export default function ReadInventario() {
     localStorage.setItem('Apellido', cantidad);
     localStorage.setItem('proveedor', proveedor);
     localStorage.setItem('calidad', calidad);
-    localStorage.setItem('Autorizacion', checkbox);
   };
 
   const getData = () => {
@@ -38,41 +38,41 @@ export default function ReadInventario() {
 
   return (
     <div>
-    <nav>
-        <ul>
-        <li><Link to="/readClientes">Ir a la tabla Clientes</Link></li>
-        <li><Link to="/readInventario">Ir a la tabla Inventario</Link></li>
-        <li><Link to="/read">Ir a la tabla Empleados</Link></li>
-        <li><Link to="/readProyectos">Ir a la tabla Proyectos</Link></li>
-    </ul>
+      <nav className='nav' >
+      <h1>Gestion Empresarial</h1>
+      <a  ><Link className='a' to="/readClientes">Clientes</Link></a>
+        <a  ><Link className='a' to="/readInventario">Inventario</Link></a>
+        <a  ><Link className='a' to="/read">Empleados</Link></a>
+        <a  ><Link className='a' to="/readProyectos">Proyectos</Link></a>
+        <a  ><Link className='a' to="/readEmpresas">Empresas</Link></a>
+        <a  ><Link className='a' to="/readUsuarios">Usuarios</Link></a>
+
       </nav>
-      <Table singleLine>
+      <Table className='Table3' singleLine>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Nombre</Table.HeaderCell>
-            <Table.HeaderCell>Cantidad</Table.HeaderCell>
-            <Table.HeaderCell>Proveedor</Table.HeaderCell>
-            <Table.HeaderCell>Calidad</Table.HeaderCell>
-            <Table.HeaderCell>checkbox</Table.HeaderCell>
-            <Table.HeaderCell>Actualizar</Table.HeaderCell>
-            <Table.HeaderCell>Eliminar</Table.HeaderCell>
+            <Table.HeaderCell className='small-header2' >Nombre</Table.HeaderCell>
+            <Table.HeaderCell className='small-header2' >Cantidad</Table.HeaderCell>
+            <Table.HeaderCell className='small-header2' >Proveedor</Table.HeaderCell>
+            <Table.HeaderCell className='small-header2' >Calidad</Table.HeaderCell>
+            <Table.HeaderCell className='small-header2' >Actualizar</Table.HeaderCell>
+            <Table.HeaderCell className='small-header2' >Eliminar</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {APIData.map((data) => (
             <Table.Row key={data._id}>
-              <Table.Cell>{data.nombre}</Table.Cell>
-              <Table.Cell>{data.cantidad}</Table.Cell>
-              <Table.Cell>{data.proveedor}</Table.Cell>
-              <Table.Cell>{data.calidad}</Table.Cell>
-              <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
+              <Table.Cell className='casilla2' >{data.nombre}</Table.Cell>
+              <Table.Cell className='casilla2' >{data.cantidad}</Table.Cell>
+              <Table.Cell className='casilla2' >{data.proveedor}</Table.Cell>
+              <Table.Cell className='casilla2' >{data.calidad}</Table.Cell>
               <Table.Cell>
                 <Link to="/update">
-                  <Button onClick={() => setData(data)}>Update</Button>
+                  <Button className='boton2' onClick={() => setData(data)}>Update</Button>
                 </Link>
               </Table.Cell>
               <Table.Cell>
-                <Button onClick={() => onDelete(data._id)}>Eliminar</Button>
+                <Button className='boton2' onClick={() => onDelete(data._id)}>Eliminar</Button>
               </Table.Cell>
             </Table.Row>
           ))}
