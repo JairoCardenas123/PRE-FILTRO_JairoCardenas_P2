@@ -1,5 +1,5 @@
 import axios from 'axios';
-import '../css/nav.css'
+import '../../css/nav.css'
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
@@ -30,7 +30,7 @@ export default function ReadUsuarios() {
   };
 
   const onDelete = (_id) => {
-    axios.get(`http://localhost:8001/api/Usuarios/${_id}`).then(() => {
+    axios.delete(`http://localhost:8001/api/Usuarios/${_id}`).then(() => {
       getData();
     }).catch((error) => {
       console.error('Error al eliminar el elemento:', error);
@@ -42,7 +42,7 @@ export default function ReadUsuarios() {
       <nav className='nav' >
       <h1>Gestion Empresarial</h1>
       <a  ><Link className='a' to="/readClientes">Clientes</Link></a>
-        <a  ><Link className='a' to="/readInventario">Usuarios</Link></a>
+        <a  ><Link className='a' to="/readInventario">Inventarios</Link></a>
         <a  ><Link className='a' to="/read">Empleados</Link></a>
         <a  ><Link className='a' to="/readProyectos">Proyectos</Link></a>
         <a  ><Link className='a' to="/readEmpresas">Empresas</Link></a>
@@ -65,7 +65,7 @@ export default function ReadUsuarios() {
               <Table.Cell className='casilla2' >{data.email}</Table.Cell>
               <Table.Cell className='casilla2' >{data.password}</Table.Cell>
               <Table.Cell>
-                <Link to="/update">
+                <Link to="/updateUsuarios">
                   <Button className='boton2' onClick={() => setData(data)}>Update</Button>
                 </Link>
               </Table.Cell>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import '../css/nav.css'
+import '../../css/nav.css'
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ export default function ReadProyectos() {
   const [APIData, setAPIData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:8001/api/Empresas`)
+      .get(`http://localhost:8001/api/Proyectos`)
       .then((response) => {
         console.log(response.data);
         setAPIData(response.data);
@@ -16,21 +16,22 @@ export default function ReadProyectos() {
   }, []);
 
   const setData = (data) => {
-    let { _id, nombre, direccion, telefono,checkbox } = data;
+    let { _id, nombre, descripcion, fechaInicio,fechaFinalizacion } = data;
     localStorage.setItem('ID', _id);
     localStorage.setItem('Nombre', nombre);
-    localStorage.setItem('Apellido', direccion);
-    localStorage.setItem('telefono', telefono);
+    localStorage.setItem('Apellido', descripcion);
+    localStorage.setItem('fechaInicio', fechaInicio);
+    localStorage.setItem('fechaFinalizacion', fechaFinalizacion);
   };
 
   const getData = () => {
-    axios.get(`http://localhost:8001/api/Empresas`).then((getData) => {
+    axios.get(`http://localhost:8001/api/Proyectos`).then((getData) => {
       setAPIData(getData.data);
     });
   };
 
   const onDelete = (_id) => {
-    axios.get(`http://localhost:8001/api/Empresas/${_id}`).then(() => {
+    axios.delete(`http://localhost:8001/api/Proyectos/${_id}`).then(() => {
       getData();
     }).catch((error) => {
       console.error('Error al eliminar el elemento:', error);
@@ -56,8 +57,9 @@ export default function ReadProyectos() {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell className='small-header3' >Nombre</Table.HeaderCell>
-            <Table.HeaderCell className='small-header3' >Direccion</Table.HeaderCell>
-            <Table.HeaderCell className='small-header3' >Telefono</Table.HeaderCell>
+            <Table.HeaderCell className='small-header3' >Descripcion</Table.HeaderCell>
+            <Table.HeaderCell className='small-header3' >FechaInicio</Table.HeaderCell>
+            <Table.HeaderCell className='small-header3' >fechaFinalizacion</Table.HeaderCell>
             <Table.HeaderCell className='small-header3' >Actualizar</Table.HeaderCell>
             <Table.HeaderCell className='small-header3' >Eliminar</Table.HeaderCell>
           </Table.Row>
@@ -66,10 +68,11 @@ export default function ReadProyectos() {
           {APIData.map((data) => (
             <Table.Row key={data._id}>
               <Table.Cell className='casilla3' >{data.nombre}</Table.Cell>
-              <Table.Cell className='casilla3' >{data.direccion}</Table.Cell>
-              <Table.Cell className='casilla3' >{data.telefono}</Table.Cell>
+              <Table.Cell className='casilla3' >{data.descripcion}</Table.Cell>
+              <Table.Cell className='casilla3' >{data.fechaInicio}</Table.Cell>
+              <Table.Cell className='casilla3' >{data.fechaFinalizacion}</Table.Cell>
               <Table.Cell>
-                <Link to="/update">
+                <Link to="/updateProyectos">
                   <Button className='boton3' onClick={() => setData(data)}>Update</Button>
                 </Link>
               </Table.Cell>
