@@ -65,7 +65,7 @@ export default function Read() {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell className='small-header' >Nombre</Table.HeaderCell>
-            <Table.HeaderCell className='small-header' >Apellido</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Cargo</Table.HeaderCell>
             <Table.HeaderCell className='small-header' >salario</Table.HeaderCell>
             <Table.HeaderCell className='small-header' >Actualizar</Table.HeaderCell>
             <Table.HeaderCell className='small-header' >Eliminar</Table.HeaderCell>

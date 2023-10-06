@@ -41,12 +41,15 @@ const updateAPIData = ()=>{
 
   return (
     <div>
-            <nav className='nav'>
-  <div className='left'>
-    <h1>Gestion Empresarial</h1>
-    <img className='imagen' src={logo1} alt="Descripción de la imagen" />
+<nav className='nav'>
+  <div className='tituloImagen' >
+  <img className='imagen' src={logo1} alt="Descripción de la imagen" />
+  <h1>Gestion Empresarial</h1>
   </div>
+
   <div className='right'>
+  <Link className='a' to="/home">home</Link>
+
     <Link className='a' to="/readClientes">Clientes</Link>
     <Link className='a' to="/readInventario">Inventario</Link>
     <Link className='a' to="/read">Empleados</Link>

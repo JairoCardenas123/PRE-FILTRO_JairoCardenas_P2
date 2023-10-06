@@ -33,7 +33,7 @@ export default function CreateProyectos() {
 
   return (
     <div>
-      <nav className='nav'>
+<nav className='nav'>
   <div className='tituloImagen' >
   <img className='imagen' src={logo1} alt="Descripción de la imagen" />
   <h1>Gestion Empresarial</h1>

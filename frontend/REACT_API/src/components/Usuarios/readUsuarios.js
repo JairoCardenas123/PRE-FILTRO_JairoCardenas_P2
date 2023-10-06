@@ -65,7 +65,6 @@ export default function ReadUsuarios() {
           <Table.Row>
             <Table.HeaderCell className='small-header' >Nombre</Table.HeaderCell>
             <Table.HeaderCell className='small-header' >Email</Table.HeaderCell>
-            <Table.HeaderCell className='small-header' >Password</Table.HeaderCell>
             <Table.HeaderCell className='small-header' >Actualizar</Table.HeaderCell>
             <Table.HeaderCell className='small-header' >Eliminar</Table.HeaderCell>
           </Table.Row>
@@ -75,7 +74,6 @@ export default function ReadUsuarios() {
             <Table.Row key={data._id}>
               <Table.Cell className='casilla' >{data.nombre}</Table.Cell>
               <Table.Cell className='casilla' >{data.email}</Table.Cell>
-              <Table.Cell className='casilla' >{data.password}</Table.Cell>
               <Table.Cell>
                 <Link to="/updateUsuarios">
                   <Button className='CreateUpdate' onClick={() => setData(data)}>Update</Button>

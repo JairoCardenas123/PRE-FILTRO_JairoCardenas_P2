@@ -1,5 +1,4 @@
 const Cliente = require('../Models/Clientes.js');
-const bcryptjs = require ('bcryptjs');
 
 
 

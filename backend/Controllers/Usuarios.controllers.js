@@ -51,10 +51,6 @@ const obtenerUsuarios = async(req,res) =>{
 const putUsuarios = async (req, res)=>{
       const { id } = req.params;
       const { _id, password, googleSignIn, ...resto } = req.body;
-      if ( password ) {
-          const salt = bcryptjs.genSaltSync();
-          resto.password = bcryptjs.hashSync( password, salt );
-      }
       const usuario = await Usuarios.findByIdAndUpdate( id, resto, {new:true});
       res.json({
           msg:"Usuario Actualizado",

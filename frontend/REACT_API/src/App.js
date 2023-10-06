@@ -38,14 +38,20 @@ export default function App() {
         <Route path='/createInventarios' component={CreateInventarios}></Route>
         <Route path='/createProyectos' component={CreateProyectos}></Route>
         <Route path='/createUsuarios' component={CreateUsuarios}></Route>
-        <Route path='/create' component={Create}></Route>
 
         <Route exact path='/read' component={Read}></Route>
+        <Route exact path='/update' component={Update}></Route>
+        <Route path='/create' component={Create}></Route>
+
+
+
         <Route exact path='/readProyectos' component={ReadProyectos}></Route>
         <Route exact path='/updateProyectos' component={UpdateProyectos}></Route>
         <Route exact path='/readInventario' component={ReadInventario}></Route>
         <Route exact path='/updateInventarios' component={UpdateInventario}></Route>
         <Route exact path='/readClientes' component={ReadClientes}></Route>
+        <Route exact path='/updateClientes' component={UpdateClientes}></Route>
+
         <Route exact path='/readEmpresas' component={ReadEmpresas}></Route>
         <Route exact path='/updateEmpresas' component={UpdateEmpresas}></Route>
         <Route exact path='/readUsuarios' component={ReadUsuarios}></Route>

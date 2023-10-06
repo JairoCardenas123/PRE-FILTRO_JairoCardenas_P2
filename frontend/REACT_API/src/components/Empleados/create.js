@@ -31,7 +31,7 @@ export default function Create() {
 
   return (
     <div>
-      <nav className='nav'>
+<nav className='nav'>
   <div className='tituloImagen' >
   <img className='imagen' src={logo1} alt="Descripción de la imagen" />
   <h1>Gestion Empresarial</h1>
@@ -54,12 +54,12 @@ export default function Create() {
           <input placeholder="Nombre" value={nombre} onChange={(e) => setFirstName(e.target.value)} ></input>
         </Form.Field>
         <Form.Field>
-          <label>Apellido</label>
-          <input placeholder="Apellido" value={cargo} onChange={(e) => setLastName(e.target.value)} ></input>
+          <label>cargo</label>
+          <input placeholder="cargo" value={cargo} onChange={(e) => setLastName(e.target.value)} ></input>
         </Form.Field>
         <Form.Field>
           <label>salario</label>
-          <input placeholder="Apellido" value={salario} onChange={(e) => setSalario(e.target.value)} ></input>
+          <input placeholder="Salario" value={salario} onChange={(e) => setSalario(e.target.value)} ></input>
         </Form.Field>
         <Button type="submit" onClick={postData}>Crear</Button>
       </Form>
