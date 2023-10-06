@@ -1,5 +1,5 @@
 import axios from 'axios';
-import '../css/nav.css'
+import '../../css/nav.css'
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom';
 export default function Read() {
   const [APIData, setAPIData] = useState([]);
   useEffect(() => {
-    axios
-      .get(`http://localhost:8001/api/Empleados`)
+    axios.get(`http://localhost:8001/api/Empleados`)
       .then((response) => {
         console.log(response.data);
         setAPIData(response.data);
@@ -16,10 +15,11 @@ export default function Read() {
   }, []);
 
   const setData = (data) => {
-    let { _id, nombre, cargo } = data;
+    let { _id, nombre, cargo,salario } = data;
     localStorage.setItem('ID', _id);
     localStorage.setItem('Nombre', nombre);
     localStorage.setItem('Apellido', cargo);
+    localStorage.setItem('Salario', salario );
   };
 
   const getData = () => {
@@ -27,11 +27,14 @@ export default function Read() {
       setAPIData(getData.data);
     });
   };
-
   const onDelete = (_id) => {
-    axios.get(`http://localhost:8001/api/Empleados/${_id}`).then(() => {
-      getData();
-    });
+    axios.delete(`http://localhost:8001/api/Empleados/${_id}`)
+      .then(() => {
+        getData();
+      })
+      .catch((error) => {
+        console.error('Error al eliminar el elemento:', error);
+      });
   };
 
   return (
@@ -52,6 +55,7 @@ export default function Read() {
           <Table.Row>
             <Table.HeaderCell className='small-header' >Nombre</Table.HeaderCell>
             <Table.HeaderCell className='small-header' >Apellido</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >salario</Table.HeaderCell>
             <Table.HeaderCell className='small-header' >Actualizar</Table.HeaderCell>
             <Table.HeaderCell className='small-header' >Eliminar</Table.HeaderCell>
           </Table.Row>
@@ -61,6 +65,7 @@ export default function Read() {
             <Table.Row key={data._id}>
               <Table.Cell className='casilla' >{data.nombre}</Table.Cell>
               <Table.Cell className='casilla' >{data.cargo}</Table.Cell>
+              <Table.Cell className='casilla' >{data.salario}</Table.Cell>
               <Table.Cell>
                 <Link to="/update">
                   <Button className='boton' onClick={() => setData(data)}>Update</Button>

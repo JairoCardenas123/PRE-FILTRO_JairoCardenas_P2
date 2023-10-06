@@ -32,7 +32,9 @@ export default function ReadEmpresas() {
   const onDelete = (_id) => {
     axios.get(`http://localhost:8001/api/Empresas/${_id}`).then(() => {
       getData();
-    });
+    }).catch((error) => {
+      console.error('Error al eliminar el elemento:', error);
+    });;
   };
 
   return (

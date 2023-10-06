@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { Button, Checkbox, Form, } from 'semantic-ui-react';
 import axios from "axios";
 import { useHistory } from "react-router";
 
@@ -9,23 +9,24 @@ export default function Update() {
   const [nombre, setFirstName] = useState('');
   const [cargo, setLastName] = useState('');
   const [checkbox, setCheckbox] = useState(false);
+  useEffect(()=>{
+    setID(localStorage.getItem('ID'));
+    setFirstName(localStorage.getItem('Nombre'));
+    setLastName(localStorage.getItem('Cargo'));
 
-  useEffect(() => {
-    setID(localStorage.getItem('ID'))
-    setFirstName(localStorage.getItem('Nombre'))
-    setLastName(localStorage.getItem('Apellido'))
-    setCheckbox(localStorage.getItem('Autorizacion'))
-  }, []);
+},[]);
 
-  const updateAPIData = () => {
-    axios.put(`http://localhost:8001/api/Empleados/`, {
+const updateAPIData = ()=>{
+  axios.put(`http://localhost:8001/api/Empleados/${_id}`,
+  {
       nombre,
       cargo,
-      checkbox
-    }).then(() => {
-      history.push('/')
-    })
+      checkbox,
   }
+  ).then(()=>{
+    history.push('/read');
+  })
+}
 
   return (
     <div>
@@ -41,7 +42,7 @@ export default function Update() {
         <Form.Field>
           <Checkbox label="Acepto los términos y condiciones:" checked={checkbox} onChange={() => setCheckbox(!checkbox)} ></Checkbox>
         </Form.Field>
-        <Button type="submit" onClick={updateAPIData}>Actualizar</Button>
+        <Button type="submit" onClick={updateAPIData}>ACTUALIZAR</Button>
       </Form>
     </div>
   );

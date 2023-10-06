@@ -1,8 +1,6 @@
 import axios from 'axios';
-import '../css/nav.css'
-
-import logo1 from '../css/logo1.png'
-
+import '../../css/nav.css'
+import logo1 from '../../css/logo1.png'
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
@@ -19,14 +17,15 @@ export default function ReadClientes() {
   }, []);
 
   const setData = (data) => {
-    let { _id, nombre, apellido,direccion,celular,correoElectronico,empresa,checkbox } = data;
+    let { _id, nombre, apellido,fechaNacimiento ,direccion,celular,empresa,correoElectronico } = data;
     localStorage.setItem('ID', _id);
     localStorage.setItem('Nombre', nombre);
     localStorage.setItem('Apellido', apellido);
+    localStorage.setItem('FechaNacimiento', fechaNacimiento );
     localStorage.setItem('Direccion', direccion);
     localStorage.setItem('Celular', celular);
-    localStorage.setItem('correoElectronico', correoElectronico);
     localStorage.setItem('Empresa', empresa);
+    localStorage.setItem('CorreoElectronico', correoElectronico);
   };
 
   const getData = () => {
@@ -36,9 +35,13 @@ export default function ReadClientes() {
   };
 
   const onDelete = (_id) => {
-    axios.get(`http://localhost:8001/api/Clientes/${_id}`).then(() => {
-      getData();
-    });
+    axios.delete(`http://localhost:8001/api/Clientes/${_id}`)
+      .then(() => {
+        getData();
+      })
+      .catch((error) => {
+        console.error('Error al eliminar el elemento:', error);
+      });
   };
 
   return (
@@ -59,10 +62,11 @@ export default function ReadClientes() {
           <Table.Row>
             <Table.HeaderCell className='small-header1' >Nombre</Table.HeaderCell>
             <Table.HeaderCell className='small-header1' >Apellido</Table.HeaderCell>
+            <Table.HeaderCell className='small-header1' >FechaNacimiento</Table.HeaderCell>
             <Table.HeaderCell className='small-header1' >Direccion</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >Celular</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >correoElectronico</Table.HeaderCell>
+            <Table.HeaderCell className='small-header1' >celular</Table.HeaderCell>
             <Table.HeaderCell className='small-header1' >Empresa</Table.HeaderCell>
+            <Table.HeaderCell className='small-header1' >correoElectronico</Table.HeaderCell>
             <Table.HeaderCell className='small-header1' >Actualizar</Table.HeaderCell>
             <Table.HeaderCell className='small-header1' >Eliminar</Table.HeaderCell>
           </Table.Row>
@@ -72,12 +76,13 @@ export default function ReadClientes() {
             <Table.Row key={data._id}>
               <Table.Cell className='casilla1' >{data.nombre}</Table.Cell>
               <Table.Cell className='casilla1' >{data.apellido}</Table.Cell>
+              <Table.Cell className='casilla1' >{data.fechaNacimiento }</Table.Cell>
               <Table.Cell className='casilla1' >{data.direccion}</Table.Cell>
               <Table.Cell className='casilla1' >{data.celular}</Table.Cell>
-              <Table.Cell className='casilla1' >{data.correoElectronico}</Table.Cell>
               <Table.Cell className='casilla1' >{data.empresa}</Table.Cell>
+              <Table.Cell className='casilla1' >{data.correoElectronico}</Table.Cell>
               <Table.Cell>
-                <Link to="/update">
+                <Link to="/updateClientes">
                   <Button className='boton1' onClick={() => setData(data)}>Update</Button>
                 </Link>
               </Table.Cell>
