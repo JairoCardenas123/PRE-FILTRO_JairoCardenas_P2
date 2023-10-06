@@ -1,4 +1,5 @@
 import axios from 'axios';
+import '../../App.css'
 import '../../css/nav.css'
 import logo1 from '../../css/logo1.png'
 
@@ -41,19 +42,23 @@ export default function Read() {
 
   return (
     <div>
-      <nav className='nav' >
-        <h1>Gestion Empresarial</h1>
-        <img className='imagen' src={logo1} alt="Descripción de la imagen" />        
+<nav className='nav'>
+  <div className='tituloImagen' >
+  <img className='imagen' src={logo1} alt="Descripción de la imagen" />
+  <h1>Gestion Empresarial</h1>
+  </div>
 
-      <a><Link className='a' to="/readClientes">Clientes</Link></a>
-        <a><Link className='a' to="/readInventario">Inventario</Link></a>
-        <a><Link className='a' to="/read">Empleados</Link></a>
-        <a><Link className='a' to="/readProyectos">Proyectos</Link></a>
-        <a><Link className='a' to="/readEmpresas">Empresas</Link></a>
-        <a><Link className='a' to="/readUsuarios">Usuarios</Link></a>
+  <div className='right'>
+    <Link className='a' to="/readClientes">Clientes</Link>
+    <Link className='a' to="/readInventario">Inventario</Link>
+    <Link className='a' to="/read">Empleados</Link>
+    <Link className='a' to="/readProyectos">Proyectos</Link>
+    <Link className='a' to="/readEmpresas">Empresas</Link>
+    <Link className='a' to="/readUsuarios">Usuarios</Link>
+  </div>
+</nav>
+<h1 className='titulo' >Empleados</h1>
 
-
-      </nav>
       <Table className='Table' singleLine>
         <Table.Header>
           <Table.Row>
@@ -72,11 +77,11 @@ export default function Read() {
               <Table.Cell className='casilla' >{data.salario}</Table.Cell>
               <Table.Cell>
                 <Link to="/update">
-                  <Button className='boton' onClick={() => setData(data)}>Update</Button>
+                  <Button className='CreateUpdate' onClick={() => setData(data)}>Update</Button>
                 </Link>
               </Table.Cell>
               <Table.Cell>
-                <Button className='boton' onClick={() => onDelete(data._id)}>Eliminar</Button>
+                <Button className='CreateDelete' onClick={() => onDelete(data._id)}>Eliminar</Button>
               </Table.Cell>
             </Table.Row>
           ))}

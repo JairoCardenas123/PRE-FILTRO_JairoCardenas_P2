@@ -1,43 +1,80 @@
-.nav{
+/* Estilos para el contenedor del navbar */
+.nav {
+    background-color: #007bff;
+    display: flex;
+    justify-content: space-between; /* Alinea el título y la imagen a los extremos */
+    align-items: center;
+    padding: 20px 20px;
+    margin-top: -20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para el título del navbar */
+  .nav h1 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+  }
+  
+  /* Estilos para la imagen del navbar (logotipo) */
+  .nav .imagen {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  
+  /* Estilos para los enlaces del navbar */
+  .nav .right a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Agrega un margen a los enlaces para separarlos del título y la imagen */
+  .nav .right a + a {
+    margin-left: 20px; /* Espaciado entre los enlaces */
+  }
+  
+  /* Cambia el color de fondo de los enlaces al pasar el cursor */
+  .nav .right a:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  .tituloImagen{
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    height: 90px;
-    gap: 60px;
-    background-color: rgba(39, 133, 241, 0.596);
-    margin-top: -40px;
-}
+    margin-left: 20px;
+    background-color: #0056b3;
+    height: 62px;
+    width: 200px;
+    border-radius: 20px;
+  }
+  
 
-.a{
-    text-decoration: none;
-    color: black;
-    background-color: rgba(39, 133, 241, 0.596);
-    width: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 20px;
-    
-}
-
+  .titulo {
+    text-align: center;
+    font-size: 50px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    color: #007bff; /* Color del título */
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido siguiente */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave del texto */
+  }
+  
+  
 .imagen{
     height: 40px;
     width: 40px;
     margin-left:-30px;
     border-radius: 10px;
 }
+ 
 
-h1{
-    color: white;
-    font-size: 25px;
-    margin-right: -20px;
-
-} 
-
-.a:hover{
-    background-color:#50c1ee;
-    transition: calc(0.5s);
-}
 
 .th{
     font-size: 2px;
@@ -45,64 +82,65 @@ h1{
 
 
 .small-header {
-    font-size: 20px; /* Ajusta el tamaño de fuente según tus preferencias */
-    padding: 0px;
-    background-color: #50c1ee;
-}
+    background-color: #41d4ee;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #ddd; /* Borde de las celdas */
+  }
 
-.small-header1{
-    font-size: 15px;
-    padding: 0px;
-    background-color: #50c1ee;
-}
 
-.small-header2{
-    font-size: 15px;
-    padding: 0px;
-    background-color: #50c1ee;
-}
-
-.small-header3{
-    font-size: 15px;
-    padding: 0px;
-    background-color: #50c1ee;
-}
 
 .Table {
-    margin: 40px auto; /* Esto centra horizontalmente la tabla y la mueve 40px hacia abajo desde la parte superior */
-    max-width: 800px; /* Define un ancho máximo para la tabla (ajústalo según tus necesidades) */
-    background-color: #000000;
+    margin: 40px auto;
+    max-width: 800px;
+    background-color: #fff9f9;
+    border-collapse: collapse; /* Une los bordes de las celdas */
+    width: 100%;
+    border: 1px solid #ddd; /* Borde de la tabla */
+    font-size: 16px;
   }
   
+  
 .Table1{
-    margin: 40px auto; /* Esto centra horizontalmente la tabla y la mueve 40px hacia abajo desde la parte superior */
-    max-width: 800px; /* Define un ancho máximo para la tabla (ajústalo según tus necesidades) */
-    background-color: #000000;
+    margin: 40px auto;
+    max-width: 800px;
+    background-color: #fff9f9;
+    border-collapse: collapse; /* Une los bordes de las celdas */
+    width: 100%;
+    border: 1px solid #ddd; /* Borde de la tabla */
+    font-size: 16px;
 }
 
 .Table3{
-    margin: 40px auto; /* Esto centra horizontalmente la tabla y la mueve 40px hacia abajo desde la parte superior */
-    max-width: 800px; /* Define un ancho máximo para la tabla (ajústalo según tus necesidades) */
-    background-color: #000000;
+    margin: 40px auto;
+    max-width: 800px;
+    background-color: #fff9f9;
+    border-collapse: collapse; /* Une los bordes de las celdas */
+    width: 100%;
+    border: 1px solid #ddd; /* Borde de la tabla */
+    font-size: 16px;
 }
 
 
 
-.casilla{
+.casilla {
     text-align: center;
-    background-color: #41d4ee;
-}
-
+    padding: 10px;
+    border: 1px solid #ddd; /* Borde de las celdas */
+  }
 .casilla1{
     text-align: center;
-    background-color: #41d4ee;
+    padding: 10px;
+    border: 1px solid #ddd; /* Borde de las celdas */
 
 }
 
 .casilla2{
     text-align: center;
-    background-color: #41d4ee
-    ;
+    padding: 10px;
+    border: 1px solid #ddd; /* Borde de las celdas */
 
 }
 
@@ -112,27 +150,41 @@ h1{
 
 }
 
-.boton{
-    margin-left: 10px;
-    background-color: #f5dfcd4d;
-}
-
-.boton1{
-    margin-left: 20px;
-    background-color: #f5dfcd4d;
-
-}
-
-.boton2{
-    margin-left: 12px;
-    background-color: #f5dfcd4d;
-
-}
-
-.boton3{
-    margin-left: 12px;
-    background-color: #f5dfcd4d;
-
-}
+.create-form {
+    width: 330px; /* Ajusta el ancho del formulario según tus preferencias */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(79, 183, 243);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .create-form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .create-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-form button:hover {
+    background-color: #0056b3;
+  }
+  
 
 

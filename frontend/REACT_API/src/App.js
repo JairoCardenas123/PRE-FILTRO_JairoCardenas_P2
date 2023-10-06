@@ -1,6 +1,4 @@
 import './App.css';
-import fondo from './css/fondo.png'
-
 import ReadClientes from './components/Clientes/readClientes';
 import UpdateClientes from './components/Clientes/updateClientes';
 import createClientes from './components/Clientes/createClientes'; // Importa el componente UpdateClientes
@@ -70,26 +68,27 @@ export default function App() {
           <Route exact path='/updateClientes' component={UpdateClientes}></Route> {/* Agrega esta ruta */}
           <Route exact path='/update' component={Update}></Route>
         </div>
-        <div  className='botones'>
-          <Link to='/create'>
-        <Button>Crear Usuario</Button>
-        </Link>
-        <Link to='createClientes' >
-          <Button>Crear Cliente</Button>
-        </Link>
-        <Link to='createEmpresas' >
-          <Button>Crear Empresa</Button>
-        </Link>
-        <Link to='createInventarios' >
-          <Button>Crear Inventario</Button>
-        </Link>
-        <Link to='createProyectos' >
-          <Button>Crear Proyecto</Button>
-        </Link>
-        <Link to='createUsuarios' >
-          <Button>Crear Usuarios</Button>
-        </Link>
-          </div>
+        <div className='botones'>
+  <Link to='/create'>
+    <Button className='Create'>Crear Usuario</Button>
+  </Link>
+  <Link to='createClientes'>
+    <Button className='Create'>Crear Cliente</Button>
+  </Link>
+  <Link to='createEmpresas'>
+    <Button className='Create'>Crear Empresa</Button>
+  </Link>
+  <Link to='createInventarios'>
+    <Button className='Create'>Crear Inventario</Button>
+  </Link>
+  <Link to='createProyectos'>
+    <Button className='Create'>Crear Proyecto</Button>
+  </Link>
+  <Link to='createUsuarios'>
+    <Button className='Create'>Crear Usuarios</Button>
+  </Link>
+</div>
+
 
       </div>
 

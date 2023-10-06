@@ -1,5 +1,6 @@
 import axios from 'axios';
 import '../../css/nav.css'
+import '../../App.css'
 import logo1 from '../../css/logo1.png'
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
@@ -46,49 +47,56 @@ export default function ReadClientes() {
 
   return (
     <div>
-      <nav className='nav' >       
-       <h1>Gestion Empresarial</h1>
-       <img className='imagen' src={logo1} alt="Descripción de la imagen" />        
-       <a  ><Link className='a' to="/readClientes"> Clientes</Link></a>
-        <a  ><Link className='a' to="/readInventario"> Inventario</Link></a>
-        <a  ><Link className='a' to="/read"> Empleados</Link></a>
-        <a  ><Link className='a' to="/readProyectos"> Proyectos</Link></a>
-        <a  ><Link className='a' to="/readEmpresas"> Empresas</Link></a>
-        <a  ><Link className='a' to="/readUsuarios"> Usuarios</Link></a>
+<nav className='nav'>
+  <div className='tituloImagen' >
+  <img className='imagen' src={logo1} alt="Descripción de la imagen" />
+  <h1>Gestion Empresarial</h1>
+  </div>
+
+  <div className='right'>
+    <Link className='a' to="/readClientes">Clientes</Link>
+    <Link className='a' to="/readInventario">Inventario</Link>
+    <Link className='a' to="/read">Empleados</Link>
+    <Link className='a' to="/readProyectos">Proyectos</Link>
+    <Link className='a' to="/readEmpresas">Empresas</Link>
+    <Link className='a' to="/readUsuarios">Usuarios</Link>
+  </div>
+</nav>
 
 
-      </nav>
+
+    <h1 className='titulo' >Clientes</h1>
       <Table className='Table1' singleLine>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell className='small-header1' >Nombre</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >Apellido</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >FechaNacimiento</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >Direccion</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >celular</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >Empresa</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >correoElectronico</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >Actualizar</Table.HeaderCell>
-            <Table.HeaderCell className='small-header1' >Eliminar</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Nombre</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Apellido</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >FechaNacimiento</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Direccion</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >celular</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Empresa</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >correoElectronico</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Actualizar</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Eliminar</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {APIData.map((data) => (
             <Table.Row key={data._id}>
-              <Table.Cell className='casilla1' >{data.nombre}</Table.Cell>
-              <Table.Cell className='casilla1' >{data.apellido}</Table.Cell>
-              <Table.Cell className='casilla1' >{data.fechaNacimiento }</Table.Cell>
-              <Table.Cell className='casilla1' >{data.direccion}</Table.Cell>
-              <Table.Cell className='casilla1' >{data.celular}</Table.Cell>
-              <Table.Cell className='casilla1' >{data.empresa}</Table.Cell>
-              <Table.Cell className='casilla1' >{data.correoElectronico}</Table.Cell>
+              <Table.Cell className='casilla' >{data.nombre}</Table.Cell>
+              <Table.Cell className='casilla' >{data.apellido}</Table.Cell>
+              <Table.Cell className='casilla' >{data.fechaNacimiento }</Table.Cell>
+              <Table.Cell className='casilla' >{data.direccion}</Table.Cell>
+              <Table.Cell className='casilla' >{data.celular}</Table.Cell>
+              <Table.Cell className='casilla' >{data.empresa}</Table.Cell>
+              <Table.Cell className='casilla' >{data.correoElectronico}</Table.Cell>
               <Table.Cell>
                 <Link to="/updateClientes">
-                  <Button className='boton1' onClick={() => setData(data)}>Update</Button>
+                  <Button className='CreateUpdate' onClick={() => setData(data)}>Update</Button>
                 </Link>
               </Table.Cell>
               <Table.Cell>
-                <Button className='boton1' onClick={() => onDelete(data._id)}>Eliminar</Button>
+                <Button className='CreateDelete' onClick={() => onDelete(data._id)}>Eliminar</Button>
               </Table.Cell>
             </Table.Row>
           ))}

@@ -1,23 +1,37 @@
 /* Footer.css */
 
 .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-/*   position: fixed; 
-  left: 0;
-  bottom: 0;
-  width: 100%; 
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-   */
-  .container {
-    max-width: 1200px; /* Ancho máximo del contenido del footer */
-    margin: 0 auto; /* Centra el contenido horizontalmente */
-  }
-  
+  background-color: #007bff; /* Color de fondo del footer */
+  color: #fff; /* Color del texto */
+  padding: 20px 0; /* Espaciado interno superior e inferior */
+  text-align: center; /* Alineación de texto al centro */
+  font-size: 16px; /* Tamaño de fuente del texto del footer */
+}
+
+.container {
+  max-width: 1200px; /* Ancho máximo del contenido del footer */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos para los enlaces de redes sociales */
+.redes {
+  margin-top: 20px; /* Espaciado superior para separar el texto del contenido anterior */
+}
+
+.redes a {
+  color: #fff; /* Color de los enlaces de redes sociales */
+  text-decoration: none; /* Sin subrayado en los enlaces */
+  margin: 0 10px; /* Espaciado entre los enlaces */
+  font-size: 18px; /* Tamaño de fuente de los enlaces */
+  transition: color 0.3s ease; /* Transición de color suave */
+  display: inline-block; /* Alinea los enlaces en línea con el texto */
+  border: 2px solid #fff; /* Agrega un borde a los enlaces */
+  padding: 8px 16px; /* Espaciado interno para hacer los enlaces más grandes */
+  border-radius: 5px; /* Borde redondeado */
+}
+
+/* Cambia el color de fondo de los enlaces al pasar el cursor */
+.redes a:hover {
+  background-color: #fff; /* Cambia el color de fondo al pasar el cursor */
+  color: #007bff; /* Cambia el color del texto al pasar el cursor */
+}

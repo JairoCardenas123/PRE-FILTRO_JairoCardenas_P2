@@ -1,5 +1,6 @@
 import axios from 'axios';
 import '../../css/nav.css'
+import '../../App.css'
 import logo1 from '../../css/logo1.png'
 
 import React, { useEffect, useState } from 'react';
@@ -18,7 +19,7 @@ export default function ReadInventario() {
   }, []);
 
   const setData = (data) => {
-    let { _id, nombre, cantidad, proveedor,calidad,checkbox } = data;
+    let { _id, nombre, cantidad, proveedor,calidad } = data;
     localStorage.setItem('ID', _id);
     localStorage.setItem('Nombre', nombre);
     localStorage.setItem('Apellido', cantidad);
@@ -42,43 +43,48 @@ export default function ReadInventario() {
 
   return (
     <div>
-      <nav className='nav' >
-      <h1>Gestion Empresarial</h1>
-      <img className='imagen' src={logo1} alt="Descripción de la imagen" />        
+<nav className='nav'>
+  <div className='tituloImagen' >
+  <img className='imagen' src={logo1} alt="Descripción de la imagen" />
+  <h1>Gestion Empresarial</h1>
+  </div>
 
-      <a  ><Link className='a' to="/readClientes">Clientes</Link></a>
-        <a  ><Link className='a' to="/readInventario">Inventario</Link></a>
-        <a  ><Link className='a' to="/read">Empleados</Link></a>
-        <a  ><Link className='a' to="/readProyectos">Proyectos</Link></a>
-        <a  ><Link className='a' to="/readEmpresas">Empresas</Link></a>
-        <a  ><Link className='a' to="/readUsuarios">Usuarios</Link></a>
+  <div className='right'>
+    <Link className='a' to="/readClientes">Clientes</Link>
+    <Link className='a' to="/readInventario">Inventario</Link>
+    <Link className='a' to="/read">Empleados</Link>
+    <Link className='a' to="/readProyectos">Proyectos</Link>
+    <Link className='a' to="/readEmpresas">Empresas</Link>
+    <Link className='a' to="/readUsuarios">Usuarios</Link>
+  </div>
+</nav>
+<h1 className='titulo' >Inventario</h1>
 
-      </nav>
       <Table className='Table3' singleLine>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell className='small-header2' >Nombre</Table.HeaderCell>
-            <Table.HeaderCell className='small-header2' >Cantidad</Table.HeaderCell>
-            <Table.HeaderCell className='small-header2' >Proveedor</Table.HeaderCell>
-            <Table.HeaderCell className='small-header2' >Calidad</Table.HeaderCell>
-            <Table.HeaderCell className='small-header2' >Actualizar</Table.HeaderCell>
-            <Table.HeaderCell className='small-header2' >Eliminar</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Nombre</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Cantidad</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Proveedor</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Calidad</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Actualizar</Table.HeaderCell>
+            <Table.HeaderCell className='small-header' >Eliminar</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {APIData.map((data) => (
             <Table.Row key={data._id}>
-              <Table.Cell className='casilla2' >{data.nombre}</Table.Cell>
-              <Table.Cell className='casilla2' >{data.cantidad}</Table.Cell>
-              <Table.Cell className='casilla2' >{data.proveedor}</Table.Cell>
-              <Table.Cell className='casilla2' >{data.calidad}</Table.Cell>
+              <Table.Cell className='casilla' >{data.nombre}</Table.Cell>
+              <Table.Cell className='casilla' >{data.cantidad}</Table.Cell>
+              <Table.Cell className='casilla' >{data.proveedor}</Table.Cell>
+              <Table.Cell className='casilla' >{data.calidad}</Table.Cell>
               <Table.Cell>
                 <Link to="/updateInventarios">
-                  <Button className='boton2' onClick={() => setData(data)}>Update</Button>
+                  <Button className='CreateUpdate' onClick={() => setData(data)}>Update</Button>
                 </Link>
               </Table.Cell>
               <Table.Cell>
-                <Button className='boton2' onClick={() => onDelete(data._id)}>Eliminar</Button>
+                <Button className='CreateDelete' onClick={() => onDelete(data._id)}>Eliminar</Button>
               </Table.Cell>
             </Table.Row>
           ))}

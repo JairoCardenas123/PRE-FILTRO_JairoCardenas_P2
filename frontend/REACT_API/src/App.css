@@ -1,3 +1,5 @@
+
+
 .Titulo{
   display: flex;
   justify-content: center;
@@ -10,28 +12,82 @@
   font-size: 20px;
 }
 
-.botones{
+.botones {
   display: flex;
-  justify-content: space-around; 
-  align-items: center;
-  background-color: red;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: linear-gradient(to bottom, rgb(50, 111, 168), rgb(36, 167, 243));
+  max-width: 700px;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 10px; /* Redondea los bordes del contenedor */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
 }
 
+.Create {
+  background-color: rgb(48, 125, 241);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Agrega transiciones para efectos suaves */
+
+  /* Agrega sombra para resaltar los botones */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.CreateDelete {
+  background-color: rgb(255, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Agrega transiciones para efectos suaves */
+
+  /* Agrega sombra para resaltar los botones */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.CreateUpdate {
+  background-color: rgb(202, 183, 12);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Agrega transiciones para efectos suaves */
+
+  /* Agrega sombra para resaltar los botones */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.Create:hover {
+  background-color: rgb(36, 167, 243);
+  transform: scale(1.05); /* Escala ligeramente el botón al pasar el cursor */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al pasar el cursor */
+}
 .main {
   background-image: url('./css/fondo.png');
   background-repeat: no-repeat;
   background-color: #ffffff;
   margin: 0;
   padding: 0;
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
-  background-position: center center; /* Centra la imagen en el contenedor */
-  background-attachment: fixed; /* Fija el fondo */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  min-height: 91vh; /* Establece una altura mínima del viewport */
+  min-height: 100vh; /* Ajusta la altura del viewport */
 }
-
-
 .nav1{
   display: flex;
   justify-content: center;

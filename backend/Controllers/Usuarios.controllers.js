@@ -1,5 +1,4 @@
 const Usuarios = require('../Models/Usuarios.js')
-const bcryptjs = require ('bcryptjs');
 
 
 
@@ -7,8 +6,7 @@ const postUsuarios = async (req, res)=>{
 
     const {nombre, email, password} = req.body;
     const usuario = new Usuarios({nombre, email, password});
-    const salt = bcryptjs.genSaltSync();
-    usuario.password = bcryptjs.hashSync(password, salt);
+
     await usuario.save();
     res.json({
         "message":"post api",

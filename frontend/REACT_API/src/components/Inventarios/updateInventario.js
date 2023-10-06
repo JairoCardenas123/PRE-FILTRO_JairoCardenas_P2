@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import axios from "axios";
+import '../../App.css'
+import '../../css/nav.css'
+import logo1 from '../../css/logo1.png'
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router";
 
 export default function UpdateInventario() {
@@ -37,6 +41,20 @@ const updateAPIData = ()=>{
 
   return (
     <div>
+            <nav className='nav'>
+  <div className='left'>
+    <h1>Gestion Empresarial</h1>
+    <img className='imagen' src={logo1} alt="Descripción de la imagen" />
+  </div>
+  <div className='right'>
+    <Link className='a' to="/readClientes">Clientes</Link>
+    <Link className='a' to="/readInventario">Inventario</Link>
+    <Link className='a' to="/read">Empleados</Link>
+    <Link className='a' to="/readProyectos">Proyectos</Link>
+    <Link className='a' to="/readEmpresas">Empresas</Link>
+    <Link className='a' to="/readUsuarios">Usuarios</Link>
+  </div>
+</nav>
       <Form className="create-form">
         <Form.Field>
           <label>Nombre</label>
