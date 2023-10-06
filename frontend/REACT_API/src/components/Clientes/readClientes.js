@@ -48,7 +48,8 @@ export default function ReadClientes() {
     <div>
       <nav className='nav' >       
        <h1>Gestion Empresarial</h1>
-       <img className='imagen' src={logo1} alt="Descripción de la imagen" />        <a  ><Link className='a' to="/readClientes"> Clientes</Link></a>
+       <img className='imagen' src={logo1} alt="Descripción de la imagen" />        
+       <a  ><Link className='a' to="/readClientes"> Clientes</Link></a>
         <a  ><Link className='a' to="/readInventario"> Inventario</Link></a>
         <a  ><Link className='a' to="/read"> Empleados</Link></a>
         <a  ><Link className='a' to="/readProyectos"> Proyectos</Link></a>

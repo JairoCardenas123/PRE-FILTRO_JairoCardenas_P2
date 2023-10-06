@@ -47,7 +47,7 @@ export default function CreateInventarios() {
           <input placeholder="Calidad" value={calidad} onChange={(e) => setCalidad(e.target.value)} ></input>
         </Form.Field>
 
-        <Button type="submit" onClick={postData}>Actualizar</Button>
+        <Button type="submit" onClick={postData}>Crear</Button>
       </Form>
     </div>
   );

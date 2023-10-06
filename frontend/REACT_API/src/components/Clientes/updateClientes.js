@@ -56,7 +56,7 @@ const updateAPIData = ()=>{
         </Form.Field>
         <Form.Field>
           <label>fechaNacimiento</label>
-          <input placeholder="FechaNacimiento" value={fechaNacimiento} onChange={(e) => setFechaNacimiento(e.taget.value)} ></input>
+          <input placeholder="FechaNacimiento" value={fechaNacimiento} onChange={(e) => setFechaNacimiento(e.target.value)} ></input>
         </Form.Field>
         <Form.Field>
           <label>Direccion</label>

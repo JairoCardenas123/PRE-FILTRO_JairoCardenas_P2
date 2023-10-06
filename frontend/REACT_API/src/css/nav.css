@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    height: 60px;
+    height: 90px;
     gap: 60px;
     background-color: rgba(39, 133, 241, 0.596);
     margin-top: -40px;
@@ -16,7 +16,7 @@
     width: 10px;
     padding: 10px;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 20px;
     
 }
 
@@ -29,7 +29,7 @@
 
 h1{
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     margin-right: -20px;
 
 } 
@@ -68,20 +68,22 @@ h1{
     background-color: #50c1ee;
 }
 
-.Table{
-    margin-left: 200px;
-    margin-top: 40px;
+.Table {
+    margin: 40px auto; /* Esto centra horizontalmente la tabla y la mueve 40px hacia abajo desde la parte superior */
+    max-width: 800px; /* Define un ancho máximo para la tabla (ajústalo según tus necesidades) */
     background-color: #000000;
-
-}
+  }
+  
 .Table1{
+    margin: 40px auto; /* Esto centra horizontalmente la tabla y la mueve 40px hacia abajo desde la parte superior */
+    max-width: 800px; /* Define un ancho máximo para la tabla (ajústalo según tus necesidades) */
     background-color: #000000;
 }
 
 .Table3{
-    background-color: #080808;
-    margin-top: 20px;
-    margin-left: 100px;
+    margin: 40px auto; /* Esto centra horizontalmente la tabla y la mueve 40px hacia abajo desde la parte superior */
+    max-width: 800px; /* Define un ancho máximo para la tabla (ajústalo según tus necesidades) */
+    background-color: #000000;
 }
 
 

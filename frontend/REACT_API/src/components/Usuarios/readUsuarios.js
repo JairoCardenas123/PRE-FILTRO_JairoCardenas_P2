@@ -1,5 +1,6 @@
 import axios from 'axios';
 import '../../css/nav.css'
+import logo1 from '../../css/logo1.png'
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
@@ -41,6 +42,8 @@ export default function ReadUsuarios() {
     <div>
       <nav className='nav' >
       <h1>Gestion Empresarial</h1>
+      <img className='imagen' src={logo1} alt="Descripción de la imagen" />        
+
       <a  ><Link className='a' to="/readClientes">Clientes</Link></a>
         <a  ><Link className='a' to="/readInventario">Inventarios</Link></a>
         <a  ><Link className='a' to="/read">Empleados</Link></a>

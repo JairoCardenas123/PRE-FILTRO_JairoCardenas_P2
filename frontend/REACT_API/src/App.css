@@ -10,11 +10,27 @@
   font-size: 20px;
 }
 
-.main{
+.botones{
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  background-color: red;
+}
+
+.main {
+  background-image: url('./css/fondo.png');
+  background-repeat: no-repeat;
   background-color: #ffffff;
   margin: 0;
   padding: 0;
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+  background-position: center center; /* Centra la imagen en el contenedor */
+  background-attachment: fixed; /* Fija el fondo */
+  display: flex;
+  flex-direction: column;
+  min-height: 91vh; /* Establece una altura mínima del viewport */
 }
+
 
 .nav1{
   display: flex;
