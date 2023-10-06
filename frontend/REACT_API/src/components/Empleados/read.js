@@ -49,6 +49,8 @@ export default function Read() {
   </div>
 
   <div className='right'>
+  <Link className='a' to="/home">home</Link>
+
     <Link className='a' to="/readClientes">Clientes</Link>
     <Link className='a' to="/readInventario">Inventario</Link>
     <Link className='a' to="/read">Empleados</Link>

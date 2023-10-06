@@ -2,9 +2,10 @@ import axios from 'axios';
 import '../../css/nav.css'
 import '../../App.css'
 import logo1 from '../../css/logo1.png'
+import { Link } from 'react-router-dom';
+
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 
 export default function ReadClientes() {
   const [APIData, setAPIData] = useState([]);
@@ -54,6 +55,8 @@ export default function ReadClientes() {
   </div>
 
   <div className='right'>
+  <Link className='a' to="/home">home</Link>
+
     <Link className='a' to="/readClientes">Clientes</Link>
     <Link className='a' to="/readInventario">Inventario</Link>
     <Link className='a' to="/read">Empleados</Link>

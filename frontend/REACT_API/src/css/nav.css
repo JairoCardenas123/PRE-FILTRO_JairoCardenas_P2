@@ -153,6 +153,8 @@
 .create-form {
     width: 330px; /* Ajusta el ancho del formulario según tus preferencias */
     margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
     padding: 20px;
     background-color: rgb(79, 183, 243);
     border-radius: 10px;
@@ -185,6 +187,27 @@
   .create-form button:hover {
     background-color: #0056b3;
   }
+  .carrusel {
+    background-image: url(../css/carrusel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 1795px;
+    height: 800px;
+    margin: 0 auto;
+    background-color: #412b2b;
+    padding: 20px;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente los elementos */
+    align-items: center; /* Centra horizontalmente los elementos */
+  }
   
+  .info {
+    color: rgb(68, 137, 241);
+    text-align: center;
+    margin-top: 300px;
+  }
 
-
+  .p{
+    height: 2000px;
+  }
+  

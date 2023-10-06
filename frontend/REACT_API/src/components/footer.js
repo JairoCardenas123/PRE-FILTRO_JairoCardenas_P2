@@ -9,9 +9,9 @@ function Footer() {
         <p>&copy; 2023 Tu Empresa. Todos los derechos reservados.</p>
       </div>
       <div className='redes' >
-        <Link to='/' >Facebook</Link>
-        <Link to='/' >X</Link>
-        <Link to='/' >Instagram</Link>
+        <Link >Facebook</Link>
+        <Link >X</Link>
+        <Link >Instagram</Link>
       </div>
     </footer>
   );
